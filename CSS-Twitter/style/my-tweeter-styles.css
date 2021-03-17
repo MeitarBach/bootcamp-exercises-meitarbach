@@ -1,0 +1,87 @@
+.nav-container {
+    width: 25%;
+    display: inline-block;
+}
+
+.nav-logo {
+    width: 10%;
+}
+
+.nav-logo > svg {
+    border-radius: 99999px;
+}
+
+.nav-logo :hover {
+    background-color: lightskyblue;
+}
+
+.nav-item {
+    display: block;
+    border: 1px solid blue;
+    border-radius: 15px;
+    width: 60%;
+    height: 2em;
+    margin: 5px;
+}
+
+.nav-item:hover {
+    background-color: lightblue;
+}
+
+.nav-item > svg {
+    height: 50%;
+    margin: 0.5em;
+    display: inline;
+}
+
+.tweet-button{
+    display: block;
+    background-color: rgb(29, 161, 242);
+    border-radius: 9999px;
+    color: aliceblue;
+    width:8em;
+    height: 2em;
+    margin:20px;
+}
+
+.tweet-button:hover {
+    background-color: lightskyblue;
+}
+
+.newsfeed-container {
+    width: 50%;
+    display: inline-block;
+}
+
+.newsfeed-post {
+    border: 1px solid blue;
+    border-radius: 15px;
+    margin: 5px;
+}
+
+.newsfeed-post > b {
+    margin: 10px;
+}
+
+.profile-pic {
+    display: inline;
+}
+
+.profile-pic > img {
+    border-radius: 30px;
+    margin: 10px;
+    height: 50px;
+    width: 50px;
+}
+
+.newsfeed-post > p {
+    margin: 5px;
+}
+
+.like-button {
+    margin: 5px 0px 0px 10px;
+}
+
+.like-button:hover {
+    fill: red;
+}
