@@ -115,6 +115,18 @@
     outline: none;
 }
 
+.comment-button:hover {
+    fill: lightskyblue;
+}
+
+.retweet-button:hover {
+    fill: darkseagreen;
+}
+
 .like-button:hover {
     fill: red;
+}
+
+.share-button:hover {
+    fill: lightskyblue;
 }
