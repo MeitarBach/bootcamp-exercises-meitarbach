@@ -1,6 +1,11 @@
+.page-container {
+    display: flex;
+    width: 80%;
+    margin: auto;
+}
+
 .nav-container {
-    width: 25%;
-    display: inline-block;
+    flex-grow: 1;
 }
 
 .nav-logo {
@@ -19,7 +24,6 @@
     display: flex;
     border: 1px solid blue;
     border-radius: 15px;
-    width: 60%;
     height: 2em;
     margin: 5px;
     align-items: center;
@@ -50,8 +54,10 @@
 }
 
 .newsfeed-container {
-    width: 50%;
-    display: inline-block;
+    /*width: 50%;*/
+    /*display: inline-block;*/
+    margin: 0px 30px;
+    flex-grow: 2;
 }
 
 .newsfeed-post {
@@ -63,6 +69,7 @@
 .newsfeed-post > b {
     margin: 10px;
 }
+
 
 .profile-pic {
     display: inline;
@@ -81,6 +88,30 @@
 
 .like-button {
     margin: 5px 0px 0px 10px;
+}
+
+.search-box {
+    display: flex;
+    background-color: #EBEEF0;
+    border-radius: 9999px;
+    /*border: none;*/
+    height: 2em;
+}
+
+.search-box > input[type=text] {
+    /*background-color: #EBEEF0;*/
+    /*border-radius: 9999px;*/
+    /*border: none;*/
+    /*height: 2em;*/
+    background-color: transparent;
+    border: none;
+}
+
+.search-box > input[type=text]:focus {
+    background-color: white;
+    border: 1px solid lightskyblue;
+    border-radius: 9999px;
+    outline: none;
 }
 
 .like-button:hover {
