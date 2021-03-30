@@ -1,0 +1,133 @@
+.search-box {
+  display: flex;
+  background-color: #EBEEF0;
+  border-radius: 9999px;
+  height: 2em;
+}
+.search-box input[type=text] {
+  background-color: transparent;
+  border: none;
+}
+.search-box input[type=text]:focus {
+  background-color: white;
+  border: 1px solid deepskyblue;
+  border-radius: 9999px;
+  outline: none;
+}
+
+.tweet-button {
+  display: block;
+  background-color: #1da1f2;
+  border-radius: 9999px;
+  color: aliceblue;
+  width: 8em;
+  height: 2em;
+  margin: 20px;
+}
+
+.tweet-button:hover {
+  background-color: lightskyblue;
+}
+
+.profile-pic {
+  display: inline;
+}
+.profile-pic img {
+  border-radius: 30px;
+  margin: 10px;
+  height: 50px;
+  width: 50px;
+}
+
+.page-container {
+  display: flex;
+  width: 80%;
+  margin: auto;
+}
+.page-container .nav-container {
+  flex-grow: 1;
+}
+.page-container .nav-container .nav-logo {
+  width: 10%;
+}
+.page-container .nav-container .nav-logo svg {
+  border-radius: 99999px;
+}
+.page-container .nav-container .nav-logo :hover {
+  background-color: lightskyblue;
+}
+.page-container .nav-container .nav-item {
+  display: flex;
+  border: 1px solid blue;
+  border-radius: 15px;
+  height: 2em;
+  margin: 5px;
+  align-items: center;
+}
+.page-container .nav-container .nav-item svg {
+  height: 50%;
+  margin: 0.5em;
+  display: inline;
+}
+.page-container .nav-container .nav-item:hover {
+  background-color: lightskyblue;
+}
+.page-container .newsfeed-container {
+  margin: 0px 30px;
+  flex-grow: 3;
+}
+.page-container .newsfeed-container .newsfeed-post-editor textarea:focus {
+  outline-color: deepskyblue;
+}
+.page-container .newsfeed-container .newsfeed-post {
+  border: 1px solid blue;
+  border-radius: 15px;
+  margin: 5px;
+}
+.page-container .newsfeed-container .newsfeed-post b {
+  margin: 10px;
+}
+.page-container .newsfeed-container .newsfeed-post p {
+  margin: 5px;
+}
+.page-container .newsfeed-container .newsfeed-post .post-actions {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0px 0px 5px 0px;
+}
+.page-container .newsfeed-container .newsfeed-post .post-actions .comment-button:hover {
+  fill: lightskyblue;
+}
+.page-container .newsfeed-container .newsfeed-post .post-actions .retweet-button:hover {
+  fill: darkseagreen;
+}
+.page-container .newsfeed-container .newsfeed-post .post-actions .like-button:hover {
+  fill: red;
+}
+.page-container .newsfeed-container .newsfeed-post .post-actions .share-button:hover {
+  fill: lightskyblue;
+}
+.page-container .trends-container {
+  flex-grow: 2;
+  min-width: 200px;
+}
+.page-container .trends-container .trends {
+  background-color: #EBEEF0;
+  border-radius: 20px;
+  margin-top: 20px;
+  padding: 10px;
+}
+.page-container .trends-container .trends .trends-title {
+  display: flex;
+  justify-content: space-around;
+}
+.page-container .trends-container .trends .trends-title svg {
+  height: 1em;
+  width: 1em;
+}
+.page-container .trends-container .trends .trend-item {
+  display: flex;
+  flex-direction: column;
+}
+
+/*# sourceMappingURL=style.css.map */

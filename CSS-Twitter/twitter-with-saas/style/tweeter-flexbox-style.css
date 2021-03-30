@@ -1,0 +1,132 @@
+.page-container {
+    display: flex;
+    width: 80%;
+    margin: auto;
+}
+
+.nav-container {
+    flex-grow: 1;
+}
+
+.nav-logo {
+    width: 10%;
+}
+
+.nav-logo > svg {
+    border-radius: 99999px;
+}
+
+.nav-logo :hover {
+    background-color: lightskyblue;
+}
+
+.nav-item {
+    display: flex;
+    border: 1px solid blue;
+    border-radius: 15px;
+    height: 2em;
+    margin: 5px;
+    align-items: center;
+}
+
+.nav-item:hover {
+    background-color: lightblue;
+}
+
+.nav-item > svg {
+    height: 50%;
+    margin: 0.5em;
+    display: inline;
+}
+
+.tweet-button{
+    display: block;
+    background-color: rgb(29, 161, 242);
+    border-radius: 9999px;
+    color: aliceblue;
+    width:8em;
+    height: 2em;
+    margin:20px;
+}
+
+.tweet-button:hover {
+    background-color: lightskyblue;
+}
+
+.newsfeed-container {
+    /*width: 50%;*/
+    /*display: inline-block;*/
+    margin: 0px 30px;
+    flex-grow: 2;
+}
+
+.newsfeed-post {
+    border: 1px solid blue;
+    border-radius: 15px;
+    margin: 5px;
+}
+
+.newsfeed-post > b {
+    margin: 10px;
+}
+
+.post-actions {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0px 0px 5px 0px;
+}
+
+.profile-pic {
+    display: inline;
+}
+
+.profile-pic > img {
+    border-radius: 30px;
+    margin: 10px;
+    height: 50px;
+    width: 50px;
+}
+
+.newsfeed-post > p {
+    margin: 5px;
+}
+
+.search-box {
+    display: flex;
+    background-color: #EBEEF0;
+    border-radius: 9999px;
+    /*border: none;*/
+    height: 2em;
+}
+
+.search-box > input[type=text] {
+    /*background-color: #EBEEF0;*/
+    /*border-radius: 9999px;*/
+    /*border: none;*/
+    /*height: 2em;*/
+    background-color: transparent;
+    border: none;
+}
+
+.search-box > input[type=text]:focus {
+    background-color: white;
+    border: 1px solid lightskyblue;
+    border-radius: 9999px;
+    outline: none;
+}
+
+.comment-button:hover {
+    fill: lightskyblue;
+}
+
+.retweet-button:hover {
+    fill: darkseagreen;
+}
+
+.like-button:hover {
+    fill: red;
+}
+
+.share-button:hover {
+    fill: lightskyblue;
+}
