@@ -15,6 +15,16 @@
   outline: none;
 }
 
+.meitar-button {
+  display: block;
+  background-color: white;
+  border-radius: 9999px;
+  color: #1da1f2;
+  width: 8em;
+  height: 2em;
+  margin: 20px;
+}
+
 .tweet-button {
   display: block;
   background-color: #1da1f2;
@@ -25,8 +35,9 @@
   margin: 20px;
 }
 
-.tweet-button:hover {
+.tweet-button:hover, .meitar-button:hover {
   background-color: lightskyblue;
+  cursor: pointer;
 }
 
 .profile-pic {
@@ -37,6 +48,42 @@
   margin: 10px;
   height: 50px;
   width: 50px;
+}
+
+.tweet {
+  border: 1px solid blue;
+  border-radius: 15px;
+  margin: 5px;
+}
+.tweet b {
+  margin: 10px;
+}
+.tweet p {
+  margin: 5px;
+}
+.tweet .post-actions {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0px 0px 5px 0px;
+}
+.tweet .post-actions .liked {
+  background-color: rgba(255, 0, 0, 0.2);
+}
+.tweet .post-actions .comment-button:hover {
+  fill: lightskyblue;
+  cursor: pointer;
+}
+.tweet .post-actions .retweet-button:hover {
+  fill: darkseagreen;
+  cursor: pointer;
+}
+.tweet .post-actions .like-button:hover {
+  fill: red;
+  cursor: pointer;
+}
+.tweet .post-actions .share-button:hover {
+  fill: lightskyblue;
+  cursor: pointer;
 }
 
 .page-container {
@@ -71,41 +118,91 @@
 }
 .page-container .nav-container .nav-item:hover {
   background-color: lightskyblue;
+  cursor: pointer;
 }
 .page-container .newsfeed-container {
-  margin: 0px 30px;
+  margin: 0px 100px;
   flex-grow: 3;
 }
 .page-container .newsfeed-container .newsfeed-post-editor textarea:focus {
   outline-color: deepskyblue;
 }
-.page-container .newsfeed-container .newsfeed-post {
-  border: 1px solid blue;
-  border-radius: 15px;
-  margin: 5px;
+.page-container .profile-container {
+  display: none;
+  margin: 0px 100px;
+  flex-grow: 2;
 }
-.page-container .newsfeed-container .newsfeed-post b {
-  margin: 10px;
-}
-.page-container .newsfeed-container .newsfeed-post p {
-  margin: 5px;
-}
-.page-container .newsfeed-container .newsfeed-post .post-actions {
+.page-container .profile-container .profile-header {
   display: flex;
-  justify-content: space-evenly;
-  margin: 0px 0px 5px 0px;
+  align-items: center;
+  justify-content: flex-start;
 }
-.page-container .newsfeed-container .newsfeed-post .post-actions .comment-button:hover {
+.page-container .profile-container .profile-header h3 {
+  margin: 4px 0px;
+}
+.page-container .profile-container .profile-header svg {
+  margin: 0 20px;
+}
+.page-container .profile-container .profile-header svg :hover {
   fill: lightskyblue;
 }
-.page-container .newsfeed-container .newsfeed-post .post-actions .retweet-button:hover {
-  fill: darkseagreen;
+.page-container .profile-container .profile-body .cover-photo {
+  height: 160px;
 }
-.page-container .newsfeed-container .newsfeed-post .post-actions .like-button:hover {
-  fill: red;
+.page-container .profile-container .profile-body .cover-photo img {
+  width: 100%;
+  height: 225px;
+  overflow: hidden;
 }
-.page-container .newsfeed-container .newsfeed-post .post-actions .share-button:hover {
-  fill: lightskyblue;
+.page-container .profile-container .profile-body .profile-edit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.page-container .profile-container .profile-body .profile-edit .profile-pic img {
+  border-radius: 55px;
+  border: 4px solid white;
+  margin: 10px;
+  height: 100px;
+  width: 100px;
+}
+.page-container .profile-container .profile-body .profile-edit .profile-pic .profile-pic-captions {
+  margin: 0px 20px;
+}
+.page-container .profile-container .profile-body h4 {
+  margin: 0;
+}
+.page-container .profile-container .profile-about .profile-about__extra-details, .page-container .profile-container .profile-about .profile-about__following-followers {
+  margin: 5px 0;
+}
+.page-container .profile-container .profile-about .profile-about__extra-details span, .page-container .profile-container .profile-about .profile-about__following-followers span {
+  margin: 0 20px 0 0;
+}
+.page-container .profile-container .profile-about .profile-about__extra-details svg, .page-container .profile-container .profile-about .profile-about__following-followers svg {
+  height: 1em;
+  width: 1em;
+}
+.page-container .profile-container .profile-activity {
+  margin: 25px 0;
+}
+.page-container .profile-container .profile-activity .activity-nav-bar {
+  display: flex;
+}
+.page-container .profile-container .profile-activity .activity-nav-bar .activity-nav-item {
+  flex-grow: 1;
+  height: 40px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 40px;
+}
+.page-container .profile-container .profile-activity .activity-nav-bar .selected {
+  font-weight: bold;
+  text-decoration: underline;
+  text-underline-offset: 10px;
+}
+.page-container .profile-container .profile-activity .activity-nav-bar .activity-nav-item:hover {
+  cursor: pointer;
+  background-color: lightskyblue;
 }
 .page-container .trends-container {
   flex-grow: 2;

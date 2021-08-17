@@ -19,6 +19,16 @@
   }
 }
 
+.meitar-button {
+  display: block;
+  background-color: white;
+  border-radius: 9999px;
+  color: rgb(29, 161, 242);
+  width:8em;
+  height: 2em;
+  margin:20px;
+}
+
 .tweet-button {
   display: block;
   background-color: rgb(29, 161, 242);
@@ -29,8 +39,9 @@
   margin:20px;
 }
 
-.tweet-button:hover {
+.tweet-button:hover, .meitar-button:hover {
   background-color: $light-blue-hover;
+  cursor: pointer;
 }
 
 .profile-pic {
@@ -41,5 +52,53 @@
     margin: 10px;
     height: 50px;
     width: 50px;
+  }
+}
+
+.newsfeed-post {
+
+}
+
+.tweet {
+  border: 1px solid blue;
+  border-radius: 15px;
+  margin: 5px;
+
+  b {
+    margin: 10px;
+  }
+
+  p {
+    margin: 5px;
+  }
+
+  .post-actions {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0px 0px 5px 0px;
+
+    .liked {
+      background-color: rgba(255, 0, 0, 0.2);;
+    }
+
+    .comment-button:hover {
+      fill: $light-blue-hover;
+      cursor: pointer;
+    }
+
+    .retweet-button:hover {
+      fill: darkseagreen;
+      cursor: pointer;
+    }
+
+    .like-button:hover {
+      fill: red;
+      cursor: pointer;
+    }
+
+    .share-button:hover {
+      fill: $light-blue-hover;
+      cursor: pointer;
+    }
   }
 }

@@ -38,11 +38,12 @@
 
     .nav-item:hover {
       background-color: $light-blue-hover;
+      cursor: pointer;
     }
   }
 
   .newsfeed-container {
-    margin: 0px 30px;
+    margin: 0px 100px;
     flex-grow: 3;
 
     .newsfeed-post-editor {
@@ -51,38 +52,141 @@
       }
     }
 
-    .newsfeed-post {
-      border: 1px solid blue;
-      border-radius: 15px;
-      margin: 5px;
+    //.newsfeed-post {
+    //  border: 1px solid blue;
+    //  border-radius: 15px;
+    //  margin: 5px;
+    //
+    //  b {
+    //    margin: 10px;
+    //  }
+    //
+    //  p {
+    //    margin: 5px;
+    //  }
+    //
+    //  .post-actions {
+    //    display: flex;
+    //    justify-content: space-evenly;
+    //    margin: 0px 0px 5px 0px;
+    //
+    //    .comment-button:hover {
+    //      fill: $light-blue-hover;
+    //    }
+    //
+    //    .retweet-button:hover {
+    //      fill: darkseagreen;
+    //    }
+    //
+    //    .like-button:hover {
+    //      fill: red;
+    //    }
+    //
+    //    .share-button:hover {
+    //      fill: $light-blue-hover;
+    //    }
+    //  }
+    //}
+  }
 
-      b {
-        margin: 10px;
+  .profile-container {
+    display: none;
+    margin: 0px 100px;
+    flex-grow: 2;
+
+    .profile-header {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+
+      h3 {
+        margin: 4px 0px;
       }
 
-      p {
-        margin: 5px;
+      svg {
+        margin: 0 20px;
+
+        :hover {
+          fill: $light-blue-hover;
+        }
+      }
+    }
+
+    .profile-body {
+
+      .cover-photo {
+        height: 160px;
+
+        img {
+          width: 100%;
+          height: 225px;
+          overflow: hidden;
+        }
       }
 
-      .post-actions {
+      .profile-edit {
         display: flex;
-        justify-content: space-evenly;
-        margin: 0px 0px 5px 0px;
+        justify-content: space-between;
+        align-items: center;
 
-        .comment-button:hover {
-          fill: $light-blue-hover;
+        .profile-pic {
+          img {
+            border-radius: 55px;
+            border: 4px solid white;
+            margin: 10px;
+            height: 100px;
+            width: 100px;
+          }
+
+          .profile-pic-captions {
+            margin: 0px 20px;
+          }
+        }
+      }
+
+      h4 {
+        margin: 0;
+      }
+    }
+
+    .profile-about {
+      .profile-about__extra-details, .profile-about__following-followers {
+        margin: 5px 0;
+        span {
+          margin: 0 20px 0 0;
         }
 
-        .retweet-button:hover {
-          fill: darkseagreen;
+        svg {
+          height: 1em;
+          width: 1em;
+        }
+      }
+    }
+
+    .profile-activity {
+      margin: 25px 0;
+
+      .activity-nav-bar {
+        display: flex;
+
+
+        .activity-nav-item {
+          flex-grow: 1;
+          height: 40px;
+          text-align: center;
+          vertical-align: middle;
+          line-height: 40px;
         }
 
-        .like-button:hover {
-          fill: red;
+        .selected {
+          font-weight: bold;
+          text-decoration: underline;
+          text-underline-offset: 10px;
         }
 
-        .share-button:hover {
-          fill: $light-blue-hover;
+        .activity-nav-item:hover {
+          cursor: pointer;
+          background-color: $light-blue-hover;
         }
       }
     }
