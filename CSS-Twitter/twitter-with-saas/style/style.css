@@ -85,6 +85,10 @@
   fill: lightskyblue;
   cursor: pointer;
 }
+.tweet .post-actions .delete-button:hover {
+  fill: saddlebrown;
+  cursor: pointer;
+}
 
 .page-container {
   display: flex;

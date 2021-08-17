@@ -33,13 +33,24 @@ class TweetsApi {
             try {
                 let tweets = JSON.parse(localStorage.getItem('tweets'));
                 if (!tweets) {
-                    localStorage.setItem('tweets', JSON.stringify([]));
+                    tweets = [];
+                    localStorage.setItem('tweets', JSON.stringify(tweets));
                 }
                 resolve(tweets);
             } catch (err) {
                 reject(err);
             }
         })
+    }
+
+    static setTweets = (tweets) => {
+        localStorage.setItem('tweets', JSON.stringify(tweets));
+    }
+
+    static searchTweets = async (tweets, searchPhrase) => {
+        let filteredTweets = tweets.filter(tweet => tweet.content.includes(searchPhrase));
+
+        return filteredTweets;
     }
 }
 
@@ -73,7 +84,7 @@ window.onload = () => {
     const createTweetElement = (tweet) => {
         const tweetTemplate = document.getElementById("tweet-template");
         const newTweet = tweetTemplate.content.cloneNode(true);
-        newTweet.querySelector(".tweet").setAttribute("data-tweetId", tweet.id);
+        // newTweet.querySelector(".tweet").setAttribute("data-tweetId", tweet.id);
         newTweet.querySelector(".profile-pic img").setAttribute("src", tweet.postingUser.profilePicUrl);
         newTweet.querySelector(".tweet__user-name").innerHTML = tweet.postingUser.userName;
         newTweet.querySelector(".tweet__content").innerHTML = tweet.content;
@@ -88,6 +99,11 @@ window.onload = () => {
             handleLikeClick(tweet.id);
         });
 
+        const tweetDeleteButton = newTweet.querySelector(".delete-button");
+        tweetDeleteButton.addEventListener('click', () => {
+            handleDeleteClick(tweet.id);
+        })
+
         return newTweet;
     }
 
@@ -96,6 +112,15 @@ window.onload = () => {
         let likedTweet = tweets.find(tweet => tweet.id == tweetId);
         likedTweet.liked = !likedTweet.liked;
         localStorage.setItem("tweets", JSON.stringify(tweets));
+
+        refreshNewsFeed();
+        refreshProfileTweets();
+    }
+
+    const handleDeleteClick = (tweetId) => {
+        TweetsApi.getTweets().then(tweetsData => {tweets = tweetsData}).catch(err => alert(err));
+        tweets = tweets.filter(tweet => tweet.id != tweetId);
+        TweetsApi.setTweets(tweets);
 
         refreshNewsFeed();
         refreshProfileTweets();
@@ -123,9 +148,9 @@ window.onload = () => {
 
     const showHome = () => {
         const newsFeedContainer = document.querySelector(".newsfeed-container");
-        const profileContainer = document.querySelector(".profile-container");
         refreshNewsFeed();
 
+        const profileContainer = document.querySelector(".profile-container");
         profileContainer.style.display = "none";
         newsFeedContainer.style.display = "block";
     }
@@ -133,8 +158,10 @@ window.onload = () => {
     const refreshNewsFeed = () => {
         const newsFeedTweets = document.querySelector(".newsfeed-tweets");
         removeTweetsFromContainer(newsFeedTweets);
-        TweetsApi.getTweets().then(tweetsData => {tweets = tweetsData}).catch(err => alert(err));
-        tweets.forEach(tweet => appendTweetToContainer(newsFeedTweets, createTweetElement(tweet)));
+        TweetsApi.getTweets().then(tweetsData => {
+            tweets = tweetsData;
+            tweets.forEach(tweet => appendTweetToContainer(newsFeedTweets, createTweetElement(tweet)));
+        }).catch(err => alert(err));
     }
 
     const refreshProfileTweets = () => {
@@ -166,7 +193,29 @@ window.onload = () => {
     const postTweetButton = document.getElementById("post-tweet-button");
     postTweetButton.addEventListener('click', postTweet);
 
+    const searchBox = document.querySelector(".search-box input");
+    searchBox.addEventListener('input', async (event) => {
+        console.log("search!");
+        TweetsApi.getTweets().then(tweetsData => {tweets = tweetsData}).catch(err => alert(err));
+        const filteredTweets = await TweetsApi.searchTweets(tweets, event.target.value);
+        const newsFeedTweets = document.querySelector(".newsfeed-tweets");
+        removeTweetsFromContainer(newsFeedTweets);
+
+        showFilteredFeed(filteredTweets);
+    })
+
+    const showFilteredFeed = (filteredTweets) => {
+        const newsFeedTweets = document.querySelector(".newsfeed-tweets");
+        const profileContainer = document.querySelector(".profile-container");
+
+        removeTweetsFromContainer(newsFeedTweets);
+        filteredTweets.forEach(tweet => appendTweetToContainer(newsFeedTweets, createTweetElement(tweet)));
+
+        newsFeedTweets.style.display = "block";
+        profileContainer.style.display = "none";
+    }
+
     showHome();
-    setInterval(refreshNewsFeed, 1000);
-    setInterval(refreshProfileTweets, 1000);
+    // setInterval(refreshNewsFeed, 1000);
+    // setInterval(refreshProfileTweets, 1000);
 }

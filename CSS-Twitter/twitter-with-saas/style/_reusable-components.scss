@@ -100,5 +100,10 @@
       fill: $light-blue-hover;
       cursor: pointer;
     }
+
+    .delete-button:hover {
+      fill: saddlebrown;
+      cursor: pointer;
+    }
   }
 }
