@@ -1,0 +1,179 @@
+@import "colors";
+@import "reusable-components";
+
+.page-container {
+  display: flex;
+  width: 80%;
+  margin: auto;
+
+  .nav-container {
+    flex-grow: 1;
+
+    .nav-logo {
+      width: 10%;
+
+      svg {
+        border-radius: 99999px;
+      }
+    }
+
+    .nav-logo :hover {
+      background-color: $light-blue-hover;
+    }
+
+    .nav-item {
+      display: flex;
+      border: 1px solid blue;
+      border-radius: 15px;
+      height: 2em;
+      margin: 5px;
+      align-items: center;
+
+      svg {
+        height: 50%;
+        margin: 0.5em;
+        display: inline;
+      }
+    }
+
+    .nav-item:hover {
+      background-color: $light-blue-hover;
+      cursor: pointer;
+    }
+  }
+
+  .newsfeed-container {
+    margin: 0px 30px;
+    flex-grow: 3;
+    flex-direction: column;
+
+    .newsfeed-post-editor {
+      textarea:focus {
+        outline-color: $focus-blue;
+      }
+    }
+
+    .newsfeed-post {
+      border: 1px solid blue;
+      border-radius: 15px;
+      margin: 5px;
+
+      b {
+        margin: 10px;
+      }
+
+      p {
+        margin: 5px;
+      }
+
+      .post-actions {
+        display: flex;
+        justify-content: space-evenly;
+        margin: 0px 0px 5px 0px;
+
+        .comment-button:hover {
+          fill: $light-blue-hover;
+        }
+
+        .retweet-button:hover {
+          fill: darkseagreen;
+        }
+
+        .like-button:hover {
+          fill: red;
+        }
+
+        .share-button:hover {
+          fill: $light-blue-hover;
+        }
+      }
+    }
+  }
+
+  .profile-container {
+    margin: 0px 30px;
+    flex-grow: 3;
+    display: none;
+    overflow: hidden;
+
+    .profile-header {
+      display: flex;
+      width: 100%;
+
+      .back-home-button {
+        width: 10%;
+
+        svg {
+          height: 1em;
+          width: 1em;
+        }
+      }
+
+      .profile-header-data {
+        width: 90%;
+
+        h3, h5 {
+          margin: 0px 0px 3px 0px;
+        }
+
+        h5 {
+          color: rgb(101,121,134);
+        }
+      }
+    }
+
+    .cover-photo {
+      max-height: 200px;
+
+      img {
+        width: 100%;
+        max-height: 130%;
+      }
+    }
+
+    .profile-picture {
+      display: flex;
+      justify-content: space-between;
+      width: 90%;
+
+      img {
+        border: 3px solid #EEEEEE;
+        border-radius: 55px;
+        height: 100px;
+        width: 100px;
+      }
+
+      .edit-profile-button {
+        margin-top: auto;
+        border: 3px solid blue;
+      }
+    }
+  }
+
+  .trends-container {
+    flex-grow: 2;
+    min-width: 200px;
+
+    .trends {
+      background-color: #EBEEF0;
+      border-radius: 20px;
+      margin-top: 20px;
+      padding: 10px;
+
+      .trends-title {
+        display: flex;
+        justify-content: space-around;
+
+        svg {
+          height: 1em;
+          width: 1em;
+        }
+      }
+
+      .trend-item {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}

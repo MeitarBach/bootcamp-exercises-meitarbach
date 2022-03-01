@@ -1,21 +1,21 @@
-// const user = {
-//     id: 0,
-//     userName: "Meitar Bachhhh",
-//     nickname: "@string",
-//     profilePicUrl: "https://media-exp1.licdn.com/dms/image/C4E03AQGVWtDqHrj7ug/profile-displayphoto-shrink_200_200/0/1581782936486?e=1634774400&v=beta&t=OtopsKoD4C_C01vUoamtaP4YDiag9ryJb5M3TFUYKmQ",
-//     about: "Melech | Gever | Developer | Baller",
-//     location: "Tel Aviv",
-//     websiteAddress: "https://www.linkedin.com/in/meitar-bach/",
-//     joinDate: "06.06.1994",
-//     followersNum: 66,
-//     followingNum: 6
-// }
-//
-// tweets = [];
-//
-// localStorage.setItem('tweets', JSON.stringify(tweets));
-// localStorage.setItem('user', JSON.stringify(user));
-// localStorage.setItem('currentId', '0');
+const user = {
+    id: 0,
+    userName: "Meitar Bachhhh",
+    nickname: "@string",
+    profilePicUrl: "/bootcamp-exercises-meitarbach/CSS-Twitter/twitter-with-saas/resources/meitar-profile.jpeg",
+    about: "Melech | Gever | Developer | Baller",
+    location: "Tel Aviv",
+    websiteAddress: "https://www.linkedin.com/in/meitar-bach/",
+    joinDate: "06.06.1994",
+    followersNum: 66,
+    followingNum: 6
+}
+
+tweets = [];
+
+localStorage.setItem('tweets', JSON.stringify(tweets));
+localStorage.setItem('user', JSON.stringify(user));
+localStorage.setItem('currentId', '0');
 
 class Tweet {
     constructor(id, postingUser, content) {

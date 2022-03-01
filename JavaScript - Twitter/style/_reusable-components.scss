@@ -1,0 +1,51 @@
+@import "colors";
+
+.search-box {
+  display: flex;
+  background-color: #EBEEF0;
+  border-radius: 9999px;
+  height: 2em;
+
+  input[type=text] {
+    background-color: transparent;
+    border: none;
+    width: 100%;
+  }
+
+  input[type=text]:focus {
+    background-color: white;
+    border: 1px solid $focus-blue;
+    border-radius: 9999px;
+    outline: none;
+  }
+}
+
+.tweet-button {
+  display: block;
+  background-color: rgb(29, 161, 242);
+  border-radius: 9999px;
+  color: aliceblue;
+  width:8em;
+  height: 2em;
+  margin:20px;
+}
+
+.tweet-button:hover {
+  background-color: $light-blue-hover;
+}
+
+.back-home-button svg:hover {
+  fill: $light-blue-hover;
+  cursor: pointer;
+}
+
+.profile-pic {
+  display: inline;
+
+  img {
+    border-radius: 30px;
+    margin: 10px;
+    height: 50px;
+    width: 50px;
+  }
+}
